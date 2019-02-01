@@ -4,6 +4,8 @@
 
 ## Class Outline
 
+[slides](https://docs.google.com/presentation/d/1UwmuDN15zy2aA_-OKYsHPJZ5yre6nsOwuYcnfzq9yP0/edit#slide=id.g4dec19d8e4_0_4)
+
 ### Week 2 Review & Introduction
 - Posting in Gitter
 - Functions
