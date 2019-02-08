@@ -13,8 +13,8 @@
 
     <!--javascript imports-->
     <script src="leaflet.js"></script>
-    <script src="part4-data-clean.js"></script>
-    <script src="part4-data-dirty.js"></script>
+    <script src="part3-data-clean.js"></script>
+    <script src="part3-data-dirty.js"></script>
 
     <script>
 
@@ -63,14 +63,32 @@
 
     ===================== */
 
-    var data = bikeArrayClean;
+    var data = bikeArrayDirty;
 
     /* =====================
 
     Start code to filter data
 
     ===================== */
+    var dataFiltered = [];
+    data.forEach(station => {
+      if(station.length === 4) {
+        dataFiltered.push(station)
+      }
+    })
 
+    var newData = [];
+    dataFiltered.map(station => {
+      newData.push([parseFloat(station[0]), parseFloat(station[1]), station[2], parseInt(station[3])])
+    })
+
+    var largeStation = [];
+
+    newData.map(station => {
+      if(station[3] > 20) {
+        largeStation.push(station)
+      }
+    })
 
 
     /* =====================
@@ -97,6 +115,13 @@
     Start code to add markers to map
 
     ===================== */
+
+    var marker = (map) => {
+        for (var j = 0; j < largeStation.length; j ++) {
+        L.marker([largeStation[j][1],largeStation[j][0]]).addTo(map)
+      }
+    };
+    marker(map);
 
 
 

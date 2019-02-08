@@ -32,6 +32,53 @@
 
     ===================== */
 
+    //Probelm 1
+
+    var num = [];
+    var i ;
+    for (i = 0; i < 1000; i ++) {
+      if (i % 3 === 0 || i % 5 === 0 && i < 1000) {
+        num.push(i)
+      }
+    }
+
+
+    var result = num.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue
+    })
+
+
+    //Problem 2
+
+    var fibo = [1,2];
+    var newNum = () => {
+      var a;
+      for (a = 2; a < 100; a++) {
+        fibo.push(fibo[a-1] + fibo[a-2])
+      }
+    }
+    newNum()
+
+    var fiboFiltered = fibo.filter(num => num % 2 === 0 && num < 4000000);
+    console.log(fiboFiltered)
+
+    var fiboSum = fiboFiltered.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue
+    })
+
+
+    console.log(fiboSum)
+
+
+
+
+
+
+
+
+
+
+
 
 
     /* =====================
